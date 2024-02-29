@@ -12,21 +12,26 @@
 
     <div class="col_container">
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12 ms_col">
+            @foreach ($events as $event)
+                <div class="col-lg-4 col-md-6 col-sm-12 ms_col">
 
-                {{-- Le tre voci qui sotto sono solo a titolo esemplificativo --}}
-                <span>Nome dell'evento: </span>
-                <span>Data dell'evento: </span>
+                    {{-- Le tre voci qui sotto sono solo a titolo esemplificativo --}}
+                    <span>Nome dell'evento: {{ $event->title }}</span>
+                    <span>Data dell'evento: {{ $event->date }} </span>
 
-                {{-- bottone destroy --}}
-                <button type="button" class="btn btn-outline-danger">Danger</button>
+                    {{-- bottone destroy --}}
+                    <button type="button" class="btn btn-outline-danger">
+                        <a href="{{ route('event.destroy', $event->id) }}"> DELETE</a>
+                    </button>
 
 
-            </div>
+                </div>
+            @endforeach
+
         </div>
         <div class="button_container">
             <button class="ms_button">
-                <a href="{{route('edit', $event->id)}}">MODIFICA EVENTO</a>
+                <a href="{{ route('event.edit', $event->id) }}">MODIFICA EVENTO</a>
             </button>
         </div>
     </div>

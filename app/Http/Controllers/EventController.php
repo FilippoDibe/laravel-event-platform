@@ -9,8 +9,8 @@ use App\Models\Event;
 class EventController extends Controller
 {
     public function index() {
-
-        return view('welcome');
+        $events = Event::all();
+        return view('welcome', compact('events'));
     }
 
     public function edit($id)
@@ -58,16 +58,16 @@ class EventController extends Controller
     }
     public function show($id)
     {
-        $event = Comic :: find($id);
+        $event = Event :: find($id);
 
         return view('show', compact('event'));
     }
     public function destroy($id)
     {
-        $event=Comic::find($id);
+        $event=Event::find($id);
         $event->delete();
         return redirect()-> route('event.index');
-        // manca rotta
+
     }
 
 

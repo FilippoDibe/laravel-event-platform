@@ -18,8 +18,7 @@ use App\Http\Controllers\EventController;
 
 Route::get('/', [EventController :: class, 'index'])
 -> name ('event.index');
-Route :: get('/event/{id}', [EventController :: class, 'show'])
-    -> name('event.show');
+
 
 Route::get('/create', [EventController :: class, 'create'])
 -> name('event.create');
@@ -39,5 +38,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/event/{id}/edit', [EventController :: class, 'edit']) -> name('event.edit');
     Route::put('/event/{id}/edit', [EventController :: class, 'update']) -> name('event.update');
 });
+Route::delete('/event/{id}', [EventController::class, 'destroy'])
+    ->name('event.destroy');
+Route :: get('/event/{id}', [EventController :: class, 'show'])
+    -> name('event.show');
+
 
 require __DIR__.'/auth.php';
