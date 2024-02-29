@@ -20,9 +20,11 @@
                     <span>Data dell'evento: {{ $event->date }} </span>
 
                     {{-- bottone destroy --}}
-                    <button type="button" class="btn btn-outline-danger">
-                        <a href="{{ route('event.destroy', $event->id) }}"> DELETE</a>
-                    </button>
+                    <form action="{{ route('event.destroy', $event->id) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="delete">
+                    </form>
 
 
                 </div>
