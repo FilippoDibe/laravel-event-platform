@@ -6,7 +6,7 @@
 
     <div class="button_container">
         <button class="ms_button">
-            <a href="#">AGGIUNGI NUOVO EVENTO</a>
+            <a href="{{ route('event.create') }}">AGGIUNGI NUOVO EVENTO</a>
         </button>
     </div>
 
