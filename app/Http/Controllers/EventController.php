@@ -20,20 +20,20 @@ class EventController extends Controller
         return view('edit', compact('event'));
     }
 
-    // public function update($request, $id)
-    // {
-    //     $event = Event :: find($id);
+    public function update(Request $request, $id)
+    {
+        $event = Event :: find($id);
 
-    //     $data = $request -> all();
+        $data = $request -> all();
 
-    //     $event -> title = $data['title'];
-    //     $event -> description = $data['description'];
-    //     $event -> date = $data['date'];
+        $event -> title = $data['title'];
+        $event -> description = $data['description'];
+        $event -> date = $data['date'];
 
-    //     $event -> save();
+        $event -> save();
 
-    //     return redirect() -> route('event.show', $event -> id);
-    // }
+        return redirect() -> route('event.show', $event -> id);
+    }
 
     public function create() {
 

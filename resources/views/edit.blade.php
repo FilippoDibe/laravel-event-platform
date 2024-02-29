@@ -11,14 +11,15 @@
     @method('PUT')
 
     <label for="title">Titolo: </label>
-    <input type="text" name="title" id="title">
+    <input type="text" name="title" id="title" value="{{$event -> title}}">
     <br>
     <label for="description">Descrizione: </label>
-    <input type="text" name="description" id="description">
+    <input type="text" name="description" id="description" value="{{$event -> description}}">
     <br>
     <label for="date">Data: </label>
-    <input type="text" name="date" id="date">
+    <input type="text" name="date" id="date" value="{{$event -> date}}">
     <br>
+    <input type="submit" value="UPDATE">
 </form>
 
 <div class="button_container">
