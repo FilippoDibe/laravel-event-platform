@@ -18,6 +18,8 @@ use App\Http\Controllers\EventController;
 
 Route::get('/', [EventController :: class, 'index'])
 -> name ('event.index');
+Route :: get('/event/{id}', [EventController :: class, 'show'])
+    -> name('event.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
