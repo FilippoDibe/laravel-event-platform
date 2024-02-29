@@ -24,5 +24,10 @@
 
             </div>
         </div>
+        <div class="button_container">
+            <button class="ms_button">
+                <a href="{{route('edit', $event->id)}}">MODIFICA EVENTO</a>
+            </button>
+        </div>
     </div>
 @endsection
