@@ -19,6 +19,12 @@ use App\Http\Controllers\EventController;
 Route::get('/', [EventController :: class, 'index'])
 -> name ('event.index');
 
+Route::get('/create', [EventController :: class, 'create'])
+-> name('event.create');
+
+Route::post('/create', [EventController :: class, 'store'])
+-> name('event.store');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
