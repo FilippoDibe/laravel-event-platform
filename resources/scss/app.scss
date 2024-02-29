@@ -1,1 +1,68 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    background-color: rgb(113, 227, 249);
+}
+
+.title_container {
+    text-align: center;
+    margin-top: 30px;
+
+    .title {
+        font-size: 40px;
+    }
+}
+
+.button_container {
+
+    width: 100%;
+    text-align: center;
+
+    .ms_button {
+        background-color: rgb(154, 181, 255);
+        border: 2px solid blue;
+        margin-top: 20px;
+        padding: 10px 20px;
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+
+    .ms_button:hover {
+        background-color: rgb(184, 203, 255);
+    }
+}
+
+
+
+
+.col_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    cursor: pointer;
+
+    .row {
+        flex-wrap: wrap;
+        width: 90%;
+
+        .ms_col {
+            background-color: rgb(107, 255, 235);
+            border: 1px solid rgb(91, 91, 91);
+            margin-top: 10px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+
+            span {
+                padding: 30px 10px;
+            }
+
+            span:hover {
+                color: white;
+            }
+        }
+    }
+}
