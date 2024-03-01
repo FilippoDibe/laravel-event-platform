@@ -46,6 +46,8 @@ class EventController extends Controller
 
         $event = new Event();
 
+        $event -> user_id = $data['user_id'];
+
         $event -> title = $data['title'];
         $event -> description = $data['description'];
         $event -> date = $data['date'];

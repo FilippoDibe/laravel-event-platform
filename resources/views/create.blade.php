@@ -20,6 +20,11 @@
     <label for="date">Data</label>
     <input type="date" name="date" id="data">
     <br>
+
+    <label for="user_id">User id</label>
+    <input type="number" name="user_id" id="user_id">
+    <br>
+
     <input type="submit" value="Crea">
 </form>
 @endsection
