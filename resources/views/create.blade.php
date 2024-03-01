@@ -22,7 +22,11 @@
     <br>
 
     <label for="user_id">User id</label>
-    <input type="number" name="user_id" id="user_id">
+    <select name="user_id" id="user_id">
+        @foreach ($users as $user)
+            <option value="{{ $user -> name }}"></option>
+        @endforeach
+    </select>
     <br>
 
     <input type="submit" value="Crea">
