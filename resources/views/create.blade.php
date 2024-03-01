@@ -21,13 +21,13 @@
     <input type="date" name="date" id="data">
     <br>
 
-    <label for="user_id">User id</label>
+    {{-- <label for="user_id">User id</label>
     <select name="user_id" id="user_id">
         @foreach ($users as $user)
         <option value="{{ $user -> id }}">{{$user -> name}}</option>
         @endforeach
     </select>
-    <br>
+    <br> --}}
 
     <input type="submit" value="Crea">
 </form>

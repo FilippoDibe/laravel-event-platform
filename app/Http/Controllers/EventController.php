@@ -51,6 +51,7 @@ class EventController extends Controller
 
         $data = $request -> all();
 
+        // recupero l'utente che ha effettuato il login
         $user = auth() -> user();
 
         $event = new Event();
@@ -58,6 +59,8 @@ class EventController extends Controller
         $event -> title = $data['title'];
         $event -> description = $data['description'];
         $event -> date = $data['date'];
+
+        // associo l'user loggato all'evento creato
         $event -> user() -> associate($user);
 
         $event -> save();

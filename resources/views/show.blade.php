@@ -13,6 +13,7 @@
             <span>Nome dell'evento: {{ $event -> title }}</span>
             <span>Descrizione dell'evento: {{ $event -> description }}</span>
             <span>Data dell'evento: {{ $event -> date }}</span>
+            <span>ID UTENTE: {{ $event -> user_id }}</span>
 
 
         </div>
