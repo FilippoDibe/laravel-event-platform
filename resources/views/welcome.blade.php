@@ -22,19 +22,19 @@
 
                 {{-- bottone destroy --}}
                 @auth
+                @if(Auth :: user() -> id == $event -> user_id)
                 <form action="{{ route('event.destroy', $event->id) }}" method="post">
                     @csrf
                     @method('DELETE')
                     <input type="submit" value="delete">
                 </form>
-                @endauth
 
-                @auth
                 <div class="button_container">
                     <button class="ms_button">
                         <a href="{{ route('event.edit', $event->id) }}">MODIFICA EVENTO</a>
                     </button>
                 </div>
+                @endif
                 @endauth
             </div>
         </a>
