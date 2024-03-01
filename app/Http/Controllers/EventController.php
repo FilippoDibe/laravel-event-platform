@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Models\Event;
+use App\Models\User;
+use App\Models\Tag;
 
 
 class EventController extends Controller
 {
     public function index() {
+        $user = User :: all();
         $events = Event::all();
         return view('welcome', compact('events'));
     }
@@ -38,23 +42,27 @@ class EventController extends Controller
     public function create() {
 
         return view('create');
+
     }
 
     public function store(Request $request) {
 
         $data = $request -> all();
 
-        $event = new Event();
 
-        $event -> user_id = $data['user_id'];
+
+        $user = auth() -> user();
+
+        $event = new Event();
 
         $event -> title = $data['title'];
         $event -> description = $data['description'];
         $event -> date = $data['date'];
+        $event -> user() -> associate($user);
 
         $event -> save();
 
-        return redirect() -> route('event.index');
+        return redirect() -> route('welcome', $event -> id);
 
         // return redirect() -> route('event.show', $event -> id);
     }
