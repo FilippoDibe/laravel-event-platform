@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('head')
-    <title>Create</title>
+<title>Create</title>
 @endsection
 @section('content')
-    <h1>Create new Event</h1>
-    <form method="POST" enctype="multipart/form-data">
+<h1>Create new Event</h1>
+<form method="POST" enctype="multipart/form-data">
 
     @csrf
     @method("POST")
@@ -24,7 +24,7 @@
     <label for="user_id">User id</label>
     <select name="user_id" id="user_id">
         @foreach ($users as $user)
-            <option value="{{ $user -> name }}"></option>
+        <option value="{{ $user -> id }}">{{$user -> name}}</option>
         @endforeach
     </select>
     <br>

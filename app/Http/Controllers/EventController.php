@@ -41,15 +41,15 @@ class EventController extends Controller
 
     public function create() {
 
-        return view('create');
+        $users = User :: all();
+
+        return view('create', compact('users'));
 
     }
 
     public function store(Request $request) {
 
         $data = $request -> all();
-
-
 
         $user = auth() -> user();
 
@@ -62,7 +62,7 @@ class EventController extends Controller
 
         $event -> save();
 
-        return redirect() -> route('welcome', $event -> id);
+        return redirect() -> route('event.index', $event -> id);
 
         // return redirect() -> route('event.show', $event -> id);
     }
