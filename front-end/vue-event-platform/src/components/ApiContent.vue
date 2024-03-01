@@ -32,10 +32,20 @@ export default{
 </script>
 
 <template>
+
+    <header>
+        <div class=" nav-contain">
+            <a href="http://localhost:8000/login">login</a>
+            <br>
+            <a href="http://localhost:8000/register">registrati</a>
+        </div>
+    </header>
         <h1>EVENTS:</h1>
         <ul>
             <li v-for=" event in events" :key="event.id">
-                <span>{{ event.title }}</span>
+
+                <a href="http://localhost:8000/event/id">  <span>{{ event.title }}</span></a>
+
             </li>
         </ul>
 </template>
