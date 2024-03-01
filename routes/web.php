@@ -20,12 +20,6 @@ Route::get('/', [EventController :: class, 'index'])
 -> name ('event.index');
 
 
-Route::get('/create', [EventController :: class, 'create'])
--> name('event.create');
-
-Route::post('/create', [EventController :: class, 'store'])
--> name('event.store');
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -37,11 +31,19 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/event/{id}/edit', [EventController :: class, 'edit']) -> name('event.edit');
     Route::put('/event/{id}/edit', [EventController :: class, 'update']) -> name('event.update');
-});
-Route::delete('/event/{id}', [EventController::class, 'destroy'])
-    ->name('event.destroy');
-Route :: get('/event/{id}', [EventController :: class, 'show'])
-    -> name('event.show');
 
+    Route::get('/create', [EventController :: class, 'create'])
+    -> name('event.create');
+
+    Route::post('/create', [EventController :: class, 'store'])
+    -> name('event.store');
+
+    Route::delete('/event/{id}', [EventController::class, 'destroy'])
+    ->name('event.destroy');
+
+});
+
+Route :: get('/event/{id}', [EventController :: class, 'show'])
+-> name('event.show');
 
 require __DIR__.'/auth.php';
