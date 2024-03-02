@@ -40,14 +40,44 @@ export default{
             <a href="http://localhost:8000/register">registrati</a>
         </div>
     </header>
-        <h1>EVENTS:</h1>
-        <ul>
-            <li v-for=" event in events" :key="event.id">
+    
+    <div class="title_container">
+        <h1 class="title">STAMPA DEGLI EVENTI</h1>
+    </div>
 
-                <a href="http://localhost:8000/event/id">  <span>{{ event.title }}</span></a>
+    <div class="button_container">
+        <button class="ms_button">
+            <a href="#">AGGIUNGI NUOVO EVENTO</a>
+        </button>
+    </div>
 
-            </li>
-        </ul>
+    <div class="col_container">
+        <div class="row">
+            <div v-for="event in events" class="col-lg-4 col-md-6 col-sm-12 ms_col">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="#">
+                            <span>Nome dell'evento: {{ event.title }}</span>
+                            <span>Data dell'evento: {{ event.date }} </span>
+        
+                            <!-- <form action="{{ route('event.destroy', $event->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" value="delete">
+                            </form> -->
+        
+                            <div class="button_container">
+                                <button class="ms_button">
+                                    <a href="#">MODIFICA EVENTO</a>
+                                </button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </template>
 
 <style scoped lang="scss">

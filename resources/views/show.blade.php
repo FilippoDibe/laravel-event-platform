@@ -5,16 +5,17 @@
 </div>
 
 <div class="col_container">
-    <div class="row">
+    <div class="row show-card">
         {{-- noi dobbiamo fare il forheact di questo --}}
-        <div class="col-lg-4 col-md-6 col-sm-12 ms_col">
-
-            {{-- Le tre voci qui sotto sono solo a titolo esemplificativo --}}
-            <span>Nome dell'evento: {{ $event -> title }}</span>
-            <span>Descrizione dell'evento: {{ $event -> description }}</span>
-            <span>Data dell'evento: {{ $event -> date }}</span>
-            <span>ID UTENTE: {{ $event -> user_id }}</span>
-
+        <div class="col-12 ms_col">
+            <div class="card">
+                <div class="card-body info-card">
+                    <span>Nome dell'evento: {{ $event -> title }}</span>
+                    <span>Descrizione dell'evento: {{ $event -> description }}</span>
+                    <span>Data dell'evento: {{ $event -> date }}</span>
+                    <span>ID UTENTE: {{ $event -> user_id }}</span>
+                </div>
+            </div>
 
         </div>
     </div>
