@@ -51,6 +51,14 @@ export default{
         </button>
     </div>
 
+    <div class="button_container">
+        <button class="ms_button">
+            <router-link :to = "{name: 'tags'}">
+                VEDI I TAG
+            </router-link>
+        </button>
+    </div>
+
     <div class="col_container">
         <div class="row">
             <div v-for="event in events" class="col-lg-4 col-md-6 col-sm-12 ms_col">

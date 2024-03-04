@@ -10,8 +10,7 @@ export default{
 
 <template>
 
-
- <ApiContent/>
+ <router-view></router-view>
 
 </template>
 
